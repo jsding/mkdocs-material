@@ -30,13 +30,41 @@
       </div>
     </div>
 
+    {% if config.extra.get("home_url", "") %}
+      <div class="button" role="button" aria-label="Home">
+        <a href="{{ config.extra.home_url }}"
+          title="Home"
+          class="toggle-button icon"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </div>
+    {% endif %}
+    
+    
+    {% if config.extra.get("author", {}).facebook %}
+      {% set author = config.extra.author.facebook %}
+      <div class="button" role="button" aria-label="Facebook">
+        <a href="https://www.facebook.com/{{ author }}"
+          title="@{{ author }} on Facebook" target="_blank"
+          class="toggle-button icon"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      </div>
+    {% endif %}
+    
     <!-- Twitter -->
     {% if config.extra.get("author", {}).twitter %}
       {% set author = config.extra.author.twitter %}
-      <div class="button button-twitter" role="button" aria-label="Twitter">
+      <div class="button" role="button" aria-label="Twitter">
         <a href="https://twitter.com/{{ author }}"
           title="@{{ author }} on Twitter" target="_blank"
-          class="toggle-button icon icon-twitter"></a>
+          class="toggle-button icon"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      </div>
+    {% endif %}
+   
+    
+    {% if config.extra.get("author", {}).gplus %}
+      {% set author = config.extra.author.gplus %}
+      <div class="button" role="button" aria-label="GPlus">
+        <a href="https://plus.google.com/communities/{{ author }}"
+          title="@{{ author }} on GPlus" target="_blank"
+          class="toggle-button icon"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
       </div>
     {% endif %}
 

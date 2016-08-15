@@ -3,36 +3,6 @@
   {% set home = repo_url | default("/", true) %}
 
   <!-- Project information -->
-  <a href="{{ home }}" class="project">
-
-    <!-- Name and logo -->
-    <div class="banner">
-
-      <!-- Version -->
-      {% if config.extra.logo %}
-        <div class="logo">
-          <img src="{{ base_url }}/{{ config.extra.logo }}" />
-        </div>
-      {% endif %}
-
-      <!-- Project name and verison -->
-      <div class="name">
-        <strong>
-          {{ site_name }}
-          <span class="version">
-            {{ config.extra.version }}
-          </span>
-        </strong>
-
-        <!-- Project repository name -->
-        {% if repo_id %}
-          <br />
-          {{ repo_id }}
-        {% endif %}
-      </div>
-    </div>
-  </a>
-
   <!-- Repository and table of contents -->
   <div class="scrollable">
     <div class="wrapper">
@@ -77,16 +47,16 @@
         <!-- Author-related links -->
         {% if config.extra.author %}
           <hr />
-          <span class="section">The author</span>
+          <span class="section">Links</span>
           <ul>
 
-            <!-- Twitter -->
-            {% if config.extra.author.twitter %}
-              {% set author = config.extra.author.twitter %}
+            <!-- GPlus Community -->
+            {% if config.extra.author.gplus %}
+              {% set author = config.extra.author.gplus %}
               <li>
-                <a href="https://twitter.com/{{ author }}" target="_blank"
-                  title="@{{ author }} on Twitter">
-                  @{{ author }} on Twitter
+                <a href="https://plus.google.com/communities/{{ author }}" target="_blank"
+                  title="@{{ author }} on Google">
+                  Google Community
                 </a>
               </li>
             {% endif %}
